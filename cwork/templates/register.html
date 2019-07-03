@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% from "form_helper.html" import render_field %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-4-lg">
+            <div class="jumbotron p-4">
+                <h1 class="display-4">Cowrk198</h1>
+                <hr class="my-4">
+                <form method=POST action="{{ url_for('register') }}">
+
+                  {{ render_field(form.username) }}
+                  {{ render_field(form.email) }}
+                  {{ render_field(form.password) }}
+                  {{ render_field(form.confirm) }}
+                    
+                  <button type="submit" class="btn btn-primary" value=Register>Submit</button>
+                </form>
+                <br>
+                <div class="position-relative fixed-bottom">
+                    <small class="form-text text-muted">Already have an account? <a href="{{ url_for('login') }}">Sign In</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

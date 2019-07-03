@@ -1,0 +1,20 @@
+{% from "form_helper.html" import render_field %}
+
+<div class="container">
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-4">
+            <div class="jumbotron p-4">
+                <h1 class="display-4">Cowrk198</h1>
+                <hr class="my-4">
+                <form method=POST action="{{ url_for('eduardo') }}">
+
+                  {{ render_field(form.test_var) }}
+
+                  <button type="submit" class="btn btn-primary" value=Register>Submit</button>
+                </form>
+                <br>
+
+            </div>
+        </div>
+    </div>
+</div>

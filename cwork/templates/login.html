@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-4-lg">
+            <div class="jumbotron p-4">
+                <h1 class="display-4">Cowrk198</h1>
+                <form method=POST action="{{ url_for('login') }}">
+                    {% if error == true %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" name="email" class="form-control is-invalid" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" name="password" class="form-control is-invalid" id="exampleInputPassword1" placeholder="Password" required>
+                        <small class="mt-0" style="color:crimson ;">Invalid Username or Password</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    {% else %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                    {% endif %}
+                    
+                </form>
+                <br>
+                <div class="position-relative fixed-bottom">
+                    <p class="form-text text-muted">Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
